@@ -46,12 +46,19 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Resouces\TitleScene\TitleScene.cs" />
-     <Compile Include="Assets\Script\Scene\TitleScene\FadeScript.cs" />
+     <Compile Include="Assets\Script\Common\FadeScript.cs" />
+     <Compile Include="Assets\Script\Scene\Common\BaseScene.cs" />
+     <Compile Include="Assets\Script\Scene\MenuScene\FadeIn.cs" />
+     <Compile Include="Assets\Script\Scene\MenuScene\MenuCollectionB.cs" />
+     <Compile Include="Assets\Script\Scene\MenuScene\MenuReturnB.cs" />
+     <Compile Include="Assets\Script\Scene\MenuScene\MenuSettingB.cs" />
+     <Compile Include="Assets\Script\Scene\MenuScene\MenuStartB.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\FireMovie.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Fire_01.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\SE.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Sound.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Title.cs" />
+     <Compile Include="Assets\Script\Scene\TitleScene\ToMenuScene.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.9f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -286,8 +286,8 @@ RectTransform:
   m_Children:
   - {fileID: 965975394}
   - {fileID: 81031462}
-  - {fileID: 952806598}
   - {fileID: 1367718083}
+  - {fileID: 952806598}
   m_Father: {fileID: 1583697470}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -653,7 +653,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 84373719}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -672,7 +672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858482e81c4b4738b9c6d38e48cd7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.05
+  fadeSeconds: 1
+  waitMSeconds: 3000
+  image: {fileID: 952806600}
 --- !u!114 &952806600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.05490196, b: 0.0627451, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -720,6 +723,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -792,6 +796,18 @@ Transform:
   m_Father: {fileID: 1583697470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e479441077870401eb5d0365a5aeaf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &965975393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,8 +1031,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1583697470}
-  m_RootOrder: 7
+  m_Father: {fileID: 1700726613}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!328 &1307495311
 VideoPlayer:
@@ -1128,15 +1144,15 @@ RectTransform:
   m_GameObject: {fileID: 1367718081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.47, y: 0.47, z: 1}
   m_Children: []
   m_Father: {fileID: 84373719}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 134}
-  m_SizeDelta: {x: 1000, y: 2000}
+  m_AnchoredPosition: {x: 0, y: 205}
+  m_SizeDelta: {x: 1167, y: 1867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367718084
 MonoBehaviour:
@@ -1203,7 +1219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdf2817ab1604de5965d6fc984cb811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire_movie: {fileID: 0}
+  fire_movie: {fileID: 1700726614}
+  sound: {fileID: 1853261605}
+  black: {fileID: 952806599}
 --- !u!4 &1583697470
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,7 +1240,7 @@ Transform:
   - {fileID: 1853261604}
   - {fileID: 1621269295}
   - {fileID: 772780950}
-  - {fileID: 1307495310}
+  - {fileID: 1700726613}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1377,8 +1395,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1700726613}
+  - component: {fileID: 1700726614}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1391,13 +1410,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700726612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Children:
+  - {fileID: 2136135018}
+  - {fileID: 1307495310}
+  m_Father: {fileID: 1583697470}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700726614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700726612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91696dba4e76d45acbb9ecfbd0cfb4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vplayer1: {fileID: 2136135019}
+  vplayer2: {fileID: 1307495311}
 --- !u!1 &1853261602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,3 +1574,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e7057cda00e4e289a306e4a4d05160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1853261603}
+  fadeSceconds: 1
+--- !u!1 &2136135017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136135018}
+  - component: {fileID: 2136135019}
+  m_Layer: 0
+  m_Name: Fire01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2136135018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136135017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1700726613}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!328 &2136135019
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136135017}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: d317715acc78a49c1a3bda9bf24f5520, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 963194227}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 0
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
+  m_Url: 
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
