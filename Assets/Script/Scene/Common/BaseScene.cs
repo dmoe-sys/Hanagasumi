@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BaseScene : MonoBehaviour
 {
     [SerializeField] FadeScript fade = null;
+    [SerializeField] SoundFade sound_fade = null;
     string change_scene_name_ = "";
 
     bool is_click = false;
@@ -17,8 +18,15 @@ public class BaseScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fade.FadeinCallback = Activate;
-        fade.Fadeout();
+        if(sound_fade != null){
+            sound_fade.Fadein();
+        }
+        if(fade != null){
+            fade.FadeinCallback = Activate;
+            fade.Fadeout();
+        }
+        
+        
     }
 
     // Update is called once per frame
@@ -37,7 +45,8 @@ public class BaseScene : MonoBehaviour
         if (!is_click) return;
         fade.FadeinCallback = InnerChangeScene;
         change_scene_name_ = scene_name;
-        fade.Fadein();
+        if (fade != null) fade.Fadein();
+        if (sound_fade != null) sound_fade.Fadeout();
     }
 
     void InnerChangeScene()

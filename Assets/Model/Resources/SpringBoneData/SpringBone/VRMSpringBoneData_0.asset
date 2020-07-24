@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20bc2d2f83c91f4aaebe163d8b21aa3, type: 3}
+  m_Name: VRMSpringBoneData_0
+  m_EditorClassIdentifier: 
+  m_comment: TopsUpperArm
+  m_stiffnessForce: 0.75
+  m_gravityPower: 0
+  m_gravityDir: {x: 0, y: -1, z: 0}
+  m_dragForce: 0
+  m_center: Root
+  RootBones:
+  - J_Sec_L_CoatSkirtBack
+  - J_Sec_L_CoatSkirtFront
+  - J_Sec_R_CoatSkirtSide1
+  - J_Sec_R_CoatSkirtBack
+  - J_Sec_R_CoatSkirtFront
+  - J_Sec_L_CoatSkirtSide1
+  m_hitRadius: 0.028
+  ColliderGroups: []

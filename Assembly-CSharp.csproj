@@ -45,14 +45,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resouces\TitleScene\TitleScene.cs" />
+     <Compile Include="Assets\Model\script\ApplyVRMSpringBoneSetting.cs" />
+     <Compile Include="Assets\Model\script\DeleteVRMSpringBoneSetting.cs" />
+     <Compile Include="Assets\Model\script\ExportVRMSpringBoneSetting.cs" />
+     <Compile Include="Assets\Model\script\VRMSpringBoneColliderSetting.cs" />
+     <Compile Include="Assets\Model\script\VRMSpringBoneSetting.cs" />
+     <Compile Include="Assets\Resources\TitleScene\TitleScene.cs" />
      <Compile Include="Assets\Script\Common\FadeScript.cs" />
+     <Compile Include="Assets\Script\Common\SoundFade.cs" />
      <Compile Include="Assets\Script\Scene\Common\BaseScene.cs" />
+     <Compile Include="Assets\Script\Scene\Introduction\Introduction.cs" />
+     <Compile Include="Assets\Script\Scene\Introduction\RotateText.cs" />
+     <Compile Include="Assets\Script\Scene\Introduction\TextController.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\FadeIn.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuCollectionB.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuReturnB.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuSettingB.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuStartB.cs" />
+     <Compile Include="Assets\Script\Scene\Play\CameraController.cs" />
+     <Compile Include="Assets\Script\Scene\Play\Play.cs" />
+     <Compile Include="Assets\Script\Scene\Play\PlayScene\PlayScene1.cs" />
+     <Compile Include="Assets\Script\Scene\Play\PlayScene\PlayScene2.cs" />
+     <Compile Include="Assets\Script\Scene\Play\PlayScene\PlaySceneBase.cs" />
+     <Compile Include="Assets\Script\Scene\Play\PlaySceneManager.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\FireMovie.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Fire_01.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\SE.cs" />
@@ -593,9 +608,33 @@
       <Project>{f1acc365-8f89-e738-6caa-0fd9d4e4ced7}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="ShaderProperty.Editor.csproj">
+      <Project>{24b8bb02-7d59-37ee-18c9-f2d6f23ec0cb}</Project>
+      <Name>ShaderProperty.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{76469da1-c695-5398-52b2-a3b63a3268e8}</Project>
       <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniUnlit.Editor.csproj">
+      <Project>{8fe094b5-67a6-f256-e76d-ef6257490beb}</Project>
+      <Name>UniUnlit.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniHumanoid.csproj">
+      <Project>{a2bdd852-743e-f4ac-431c-f0f2a67ba15d}</Project>
+      <Name>UniHumanoid</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniJSON.csproj">
+      <Project>{7049a686-58de-1678-1330-4591ea7e8d0d}</Project>
+      <Name>UniJSON</Name>
+    </ProjectReference>
+    <ProjectReference Include="DepthFirstScheduler.csproj">
+      <Project>{83159abc-e789-d48f-2758-69bf8bc63faa}</Project>
+      <Name>DepthFirstScheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniGLTF.Editor.csproj">
+      <Project>{174568a6-3b35-ff67-c206-b3e17536a502}</Project>
+      <Name>UniGLTF.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{9044d274-0ea2-fbe9-9502-90f10bd80143}</Project>
@@ -609,17 +648,45 @@
       <Project>{5531d271-81f2-9583-be78-f73fab0632cb}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
+    <ProjectReference Include="MToon.Editor.csproj">
+      <Project>{c03a1f6b-617c-9ff9-02fb-28afceab5e6b}</Project>
+      <Name>MToon.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
       <Project>{ce9a0cac-f29c-a51e-cd1c-86c05742ab31}</Project>
       <Name>Unity.CollabProxy.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniHumanoid.Editor.csproj">
+      <Project>{cb7da1c6-76a3-b11a-c95e-cb728bf63c9f}</Project>
+      <Name>UniHumanoid.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{e3df1574-4b79-b16a-c8f7-3e05f6ddbd3e}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="VRM.csproj">
+      <Project>{9863f4fb-817c-77ba-4022-46d58a851587}</Project>
+      <Name>VRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniVRM.Editor.csproj">
+      <Project>{fa047f69-6ebd-96c5-c346-92847cf1367c}</Project>
+      <Name>UniVRM.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniUnlit.csproj">
+      <Project>{5bbf632d-f4e0-1309-b76d-e1f4b11d20f3}</Project>
+      <Name>UniUnlit</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{45e66616-dbc6-3ecd-9ef3-3c55ac8ab03d}</Project>
       <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="MToon.csproj">
+      <Project>{f954abaa-b9a2-ccd2-fb47-a6261f395521}</Project>
+      <Name>MToon</Name>
+    </ProjectReference>
+    <ProjectReference Include="ShaderProperty.Runtime.csproj">
+      <Project>{78b7ad20-8d0c-d802-fd13-46fb6c26a382}</Project>
+      <Name>ShaderProperty.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{303d48a2-477f-bbe0-e10c-ca06c97c3d07}</Project>

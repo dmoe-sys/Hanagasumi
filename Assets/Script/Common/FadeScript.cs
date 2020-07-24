@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class FadeScript : MonoBehaviour
 {
-    float speed = 0.01f;  //透明化の速さ
+    float speed = 0.017f;  //透明化の速さ
     float red, green, blue;  //RGBを操作するための変数
 
     bool is_fade_in = false;
     bool is_fade_out = false;
 
     [SerializeField] float fadeSeconds = 1;
-    [SerializeField] int waitMSeconds = 1000;
+    [SerializeField] int waitMSeconds = 0;
     float fade_time = 0;
     [SerializeField] Image image = null;
 
