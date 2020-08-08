@@ -12,7 +12,7 @@ public class PlaySceneManager
         }
     }
 
-    private static readonly string PLAY_SCENE_PLEFAB_PATH = "PlayScene/Scene/Scene";
+    private static readonly string PLAY_SCENE_PLEFAB_PATH = "PlayScene/Field/Field";
     private int play_scene_id_ = 1;
     private PlaySceneBase play_scene_ = null;
     private Transform play_scene_trans_ = null;

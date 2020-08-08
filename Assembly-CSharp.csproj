@@ -51,7 +51,9 @@
      <Compile Include="Assets\Model\script\VRMSpringBoneColliderSetting.cs" />
      <Compile Include="Assets\Model\script\VRMSpringBoneSetting.cs" />
      <Compile Include="Assets\Resources\TitleScene\TitleScene.cs" />
+     <Compile Include="Assets\Script\Common\BuildNavMesh.cs" />
      <Compile Include="Assets\Script\Common\FadeScript.cs" />
+     <Compile Include="Assets\Script\Common\LoadNavmesh.cs" />
      <Compile Include="Assets\Script\Common\SoundFade.cs" />
      <Compile Include="Assets\Script\Scene\Common\BaseScene.cs" />
      <Compile Include="Assets\Script\Scene\Introduction\Introduction.cs" />
@@ -62,18 +64,20 @@
      <Compile Include="Assets\Script\Scene\MenuScene\MenuReturnB.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuSettingB.cs" />
      <Compile Include="Assets\Script\Scene\MenuScene\MenuStartB.cs" />
-     <Compile Include="Assets\Script\Scene\Play\CameraController.cs" />
+     <Compile Include="Assets\Script\Scene\Play\EnemyMove.cs" />
      <Compile Include="Assets\Script\Scene\Play\Play.cs" />
      <Compile Include="Assets\Script\Scene\Play\PlayScene\PlayScene1.cs" />
      <Compile Include="Assets\Script\Scene\Play\PlayScene\PlayScene2.cs" />
      <Compile Include="Assets\Script\Scene\Play\PlayScene\PlaySceneBase.cs" />
      <Compile Include="Assets\Script\Scene\Play\PlaySceneManager.cs" />
+     <Compile Include="Assets\Script\Scene\Play\PlayerController.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\FireMovie.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Fire_01.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\SE.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Sound.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\Title.cs" />
      <Compile Include="Assets\Script\Scene\TitleScene\ToMenuScene.cs" />
+     <None Include="Assets\Japanese Shrine and Temples\Shaders\Foliage 1.shader" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.9f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -640,6 +644,10 @@
       <Project>{9044d274-0ea2-fbe9-9502-90f10bd80143}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{fa2e1af8-c8c1-b9bd-ee76-fd2cd56e939a}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{2d9e7793-9212-7730-7433-5d73ee268264}</Project>
       <Name>UnityEngine.UI</Name>
@@ -659,6 +667,10 @@
     <ProjectReference Include="UniHumanoid.Editor.csproj">
       <Project>{cb7da1c6-76a3-b11a-c95e-cb728bf63c9f}</Project>
       <Name>UniHumanoid.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{096a0cc9-b92e-6c47-e991-5873d1cadd8e}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{e3df1574-4b79-b16a-c8f7-3e05f6ddbd3e}</Project>
