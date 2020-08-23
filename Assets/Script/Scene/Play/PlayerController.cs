@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator_ = null;
     [SerializeField] Animator head_animator_ = null;
     [SerializeField] Animator haed_turn_animator_ = null;
+    [SerializeField] Transform head_trans_ = null;
 
 
     Transform player_trans_ = null;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player_trans_ = gameObject.transform;
-        player_trans_.position = start_postion_;
+        //player_trans_.position = start_postion_;
     }
 
     // Update is called once per frame
@@ -34,6 +35,17 @@ public class PlayerController : MonoBehaviour
         bool is_move_key_press = false;
         bool is_run_key_press = false;
         float speed = speed_;
+
+        Vector3 mouse_pos = Input.mousePosition;
+
+        Debug.Log(mouse_pos.x);
+        // ローカル座標を基準に、回転を取得
+        Vector3 localAngle = head_trans_.localEulerAngles;
+        localAngle.x = mouse_pos.y / Screen.height * -40 + 20; // ローカル座標を基準に、x軸を軸にした回転を10度に変更
+        localAngle.y = mouse_pos.x / Screen.width * 90 - 45; // ローカル座標を基準に、y軸を軸にした回転を10度に変更
+        head_trans_.localEulerAngles = localAngle; // 回転角度を設定
+
+
 
         if (Input.GetButton("Run"))
         {

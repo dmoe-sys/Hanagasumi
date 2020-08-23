@@ -10,7 +10,7 @@ public class Play : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlaySceneManager.Instance.Start(play_scene_trans_);
+        //PlaySceneManager.Instance.Start(play_scene_trans_);
         
     }
 
